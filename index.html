@@ -51,8 +51,9 @@ src="https://www.facebook.com/tr?id=1002014303241269&ev=PageView&noscript=1"/>
         
         <div class="module widget-handle language left">
           <ul class="menu">
-            <li class="no-dropdown"> <a href="#">ENG</a> </li>
-            <li class="no-dropdown"> <a href="#">中文</a> </li>
+            <li><a href="https://github.com/vasa-develop/ipfscloud" target="_blank"><i class="fab fa-github-square"></i></a></li>
+            <li><a href="https://medium.com/ipfscloud" target="_blank"><i class="fab fa-medium"></i></a></li>
+            <li><a href="https://twitter.com/ipfscloud" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
           </ul>
         </div>
       </div>
@@ -72,7 +73,7 @@ src="https://www.facebook.com/tr?id=1002014303241269&ev=PageView&noscript=1"/>
           <h1 id="name" style="font-size: 100px" class="thin mb0">CLUSTER LABS</h1>
         </div>
         <div class="col-sm-12">
-          <h4 class="mb0">Where the World meets Dencentralization</h4>
+          <h4 class="mb0">Where the World meets Decentralization</h4>
         </div>
       </div>
       <!--end of row--> 
@@ -84,7 +85,7 @@ src="https://www.facebook.com/tr?id=1002014303241269&ev=PageView&noscript=1"/>
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h6 class="uppercase">IPFS CLOUD | Decntralized, Anonymous Storage Service </h6>
+          <h6 class="uppercase">IPFS CLOUD | Decentralized, Anonymous Storage Service </h6>
           <hr class="mb40 mb-xs-24">
         </div>
       </div>
@@ -107,8 +108,10 @@ src="https://www.facebook.com/tr?id=1002014303241269&ev=PageView&noscript=1"/>
           <h4 class="lead"><b>Key Features</b></h4>
           <ul>
             <li>
-              <p class="lead text-justify">&bull; Uses <b>Zero-Knowledge Proof for Authentication</b>. No more Data Monitoring.</p>
+              <p class="lead text-justify">&bull; Uses <a href="http://srp.stanford.edu/whatisit.html" target="_blank">SRP protocol</a> for Authentication which effectively conveys a <b>Zero-Knowledge Password Proof</b> from the Client to the Server.</p>
             </li>
+            <!--https://clipperz.is/open_source/javascript_crypto_library/-->
+            <!--https://www.npmjs.com/package/jsrp-->
             <li>
               <p class="lead text-justify">&bull; <b>Easy-to-use, Intuitive, Seamless</b> Interface.</p>
             </li>
@@ -116,13 +119,17 @@ src="https://www.facebook.com/tr?id=1002014303241269&ev=PageView&noscript=1"/>
               <p class="lead text-justify">&bull; <b>Store, Share and Sync Data</b> across all your devices. </p>
             </li>
             <li>
-              <p class="lead text-justify">&bull; <b>MultiSig Encryption</b> for Security while Collaboration. </p>
+              <p class="lead text-justify">&bull; <b>MultiSig Encryption (<a href="http://cs.jhu.edu/~sdoshi/crypto/papers/shamirturing.pdf" target="_blank">Shamir's Secret Sharing</a>)</b> for Security while Collaboration. </p>
             </li>
+            <!--https://github.com/grempe/secrets.js-->
             <li>
               <p class="lead text-justify">&bull; <b>Hosting website for Free</b> within a Minute.</p>
             </li>
             <li>
               <p class="lead text-justify">&bull; A <b>Wide Range of Extensive APIs</b> for developers APIs and Tools for the Internet of Future.</p>
+            </li>
+            <li>
+              <p class="lead text-justify">&bull; <b>OpenSource</b>: Ability to connect 3rd Party apps on IpfsCloud.</p>
             </li>
             <li>
               <p class="lead text-justify">&bull; <b>IPFS Search engine</b> (Indexing the files on IPFS network).</p>
@@ -132,14 +139,18 @@ src="https://www.facebook.com/tr?id=1002014303241269&ev=PageView&noscript=1"/>
           <h4 class="lead"><b>Upcoming Features</b></h4>
           <ul>
             <li>
-              <p class="lead text-justify">&bull; <b>Peer-to-Peer market for storage</b>. Users can rent out storage to other users.</p>
+              <p class="lead text-justify">&bull; <b>Peer-to-Peer market for storage</b>. Users can rent out disk space to other users.</p>
             </li>
             <li>
-              <p class="lead text-justify">&bull; <b>Peer-to-Peer Cloud computing</b>.</p>
+              <p class="lead text-justify">&bull; <b>Peer-to-Peer Cloud computing</b>. Users can rent out computation power to other users.</p>
+            </li>
+            <li>
+              <p class="lead text-justify">&bull; Integration with <b>NextCloud</b> as an External Storage Option.</p>
             </li>
           </ul>
           <br>
-          <a class="btn mb32" target="_blank" href="http://ipfscloud.store">CHECKOUT IPFSCLOUD</a>
+          <a class="btn mb32" target="_blank" href="http://ipfscloud.store/login.html">CHECKOUT IPFSCLOUD</a>
+          <a class="btn mb32" target="_blank" href="http://ipfscloud.store/login.html">API DOCUMENTATION</a>
         </div>
         <div class="col-md-6 col-sm-10">
           <img class="" style="padding-left: 85px; padding-right: 85px;" src="img/ipfscloud_ad.png"/>
@@ -161,26 +172,22 @@ src="https://www.facebook.com/tr?id=1002014303241269&ev=PageView&noscript=1"/>
       <!--end of row-->
       <div class="row">
         <div class="col-md-10">
-          <h1 class="thin">Easy Integration with Blockchain Platforms</h1>
+          <h1 class="thin">IpfsCloud Brings Best of Internet 3.0
         </div>
       </div>
       <!--end of row-->
       <div class="row mb160 mb-xs-0">
         <div class="col-md-6 col-sm-8">
-          <p class="lead text-justify"> <strong>Double-Spend Protection:</strong><br>
-            Double-spend protection is the main reason blockchains exist in the first place. In technical terms this means that two valid transactions which spend the same transaction output (UTXO) will conflict and only one can be confirmed in the network. Account based languages (for example Ethereum) that allow for spending the same amount from the same address multiple times, usually have other means to prevent double spending.<br>
+          <p class="lead text-justify"> <strong>IPFS</strong><br>
+            IpfsCloud uses IPFS for all it's storage purposes. It uses <a href="https://github.com/orbitdb/orbit-db">OrbitDB</a> for managing user accounts. User can decide if he wants to keep data public or private. By default all the data(Encrypted, if the data is private) that is uploaded on the IpfsCloud is distributed and pinned on different public nodes.<br>
           </p>
-          <p class="lead text-justify"><b>Multisig:</b><br>
-            Multisig is a very old concept and can be compared to a shared checkbook with multiple required signers. A multisig transaction allows to enforce arbitrary joint signature rules. COMIT uses 2 out of 2 multisig transactions for which both signers have to sign a transaction to become valid and accepted by the network. Multi-signature transactions are a requirement for Payment Channels.<br>
+          <p class="lead text-justify"><b>Multisig</b><br>
+            It uses <a href="http://cs.jhu.edu/~sdoshi/crypto/papers/shamirturing.pdf" target="_blank">Shamir's Secret Sharing</a> to distribute access keys between collaborators. It divides data(key) D into n pieces in such a way that D is easily reconstructable from any k pieces, but even complete knowledge of k - 1 pieces reveals absolutely no information about D. This technique enables the construction of robust key management schemes for cryptographic systems that can function securely and reliably even when misfortunes destroy half the pieces and security breaches expose all but one of the remaining pieces.<br>
           </p>
-          <p class="lead text-justify"><strong>Time-Locks: </strong><br>
-            A timelock is a simple requirement for funds to be locked up until a future date. Blockchains are found to have 2 different kind of time-locks: relative and absolute time-locks. Absolute time-locks will lock a transaction output until a fixed time in the future. Relative time-locks will lock a transaction output relative to the time the transaction was confirmed. Time-locks are a requirement for trustless Payment Channels and relative time-locks are recommended as they allow for indefinitely open Payment Channels.<br>
+          <p class="lead text-justify"><strong>Secure Authentication </strong><br>
+            <a href="http://srp.stanford.edu/whatisit.html">SRP</a> is a secure password-based authentication and key-exchange protocol. It solves the problem of authenticating clients to servers securely, in cases where the user of the client software must memorize a small secret (like a password) and carries no other secret information, and where the server carries a verifier for each user, which allows it to authenticate the client but which, if compromised, would not allow the attacker to impersonate the client. In addition, SRP exchanges a cryptographically-strong secret as a byproduct of successful authentication, which enables the two parties to communicate securely.<br>
           </p>
-          <p class="lead text-justify"><b>Hash function: </b><br>
-            To be able to route across multiple blockchains, we need the same hash function to be able available in the smart contracting language of each blockchain. A standard hash function like the SHA256 hash function is usually available and is perfectly suitable for this purpose.<br>
-            <br>
-          </p>
-          <a class="btn btn-white mb32" target="_blank" href="http://ipfscloud.store">CHECKOUT IPFSCLOUD</a> </div>
+          <a class="btn btn-white mb32" target="_blank" href="https://medium.com/ipfscloud">KNOW MORE ABOUT IPFSCLOUD</a> </div>
       </div>
       <!--end of row--> 
     </div>
@@ -189,7 +196,9 @@ src="https://www.facebook.com/tr?id=1002014303241269&ev=PageView&noscript=1"/>
   <footer class="footer-1 bg-dark">
     <div class="container">
       <div class="row">
-        <div style="text-align: center"> <span class="sub">COMIT Network paper is licenced under a <a target="_blank" style="text-decoration: underline; text-color: white;" href="https://tldrlegal.com/license/mit-license">MIT license</a></span> </div>
+        <div style="text-align: center">
+
+        </div>
       </div>
     </div>
     <!--end of container--> 
@@ -262,6 +271,7 @@ src="https://www.facebook.com/tr?id=1002014303241269&ev=PageView&noscript=1"/>
 <script src="js/smooth-scroll.min.js"></script>
 <script src="js/parallax.js"></script> 
 <script src="js/scripts.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.4.1/js/all.js" data-auto-replace-svg="nest"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
 <script type="text/javascript">
   var md = new MobileDetect(window.navigator.userAgent);
