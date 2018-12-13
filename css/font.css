@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "myfont";
+    src: url("../static/font/Graphik-Regular.5da74ad6.woff2") format('woff');
+}
+
+@font-face {
+    font-family: "myfont";
+    src: url("../static/font/Graphik-Semibold.e55e3d50.woff2") format('woff');
+    font-weight: bold;
+}
+
+#myDiv{
+    font-family: name
+}

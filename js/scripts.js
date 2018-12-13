@@ -1382,8 +1382,29 @@ var mr_cookies = {
   }
 };
 
+
 /*\
 |*|  END COOKIE LIBRARY
 \*/
 
-
+function sendEmail(project){
+    var email_body={
+        to: document.getElementById(project).value,
+        subject: project+" Monthly Newsletter",
+        body: "You have been added to "+project+" Newletter group. Now you will be updated about our latest developments and features every month :)"
+    };
+        $.ajax({
+        url: "https://api.ipfscloud.store/email",
+        type: "POST",
+        data: email_body,
+        contentType: 'application/x-www-form-urlencoded',
+        success: function (data) {
+            console.log(data);
+            document.getElementById(project+"_email_status").innerHTML = '<font>✓ You will now recieve updates from '+project+'</font>';
+        },
+        error: function(xhr, ajaxOptions, thrownError){
+            console.log("email error: "+thrownError);
+            document.getElementById(project+"_email_status").innerHTML = '<font>Some error occured! Please try Again.</font>';            
+        }
+        });
+}
