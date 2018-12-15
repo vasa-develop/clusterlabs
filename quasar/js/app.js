@@ -84,15 +84,16 @@ appLoading.start();
                 var d = new Date(element['first-seen']);
                 result = result + "<small style='color:#8fa4b8;'>"+d.toDateString()+"</small><br>";
             }
-            
-            result = result + "<small class='card-text'>"+element['description']+"</small><br>";
+            if(element['description']!=null){
+                result = result + "<small class='card-text'>"+element['description']+"</small><br>";
+            }
             if(typeof(element['mimetype'])!="undefined"){
                 result = result + "<small style='color:#8fa4b8;'>"+element['mimetype']+"</small>";
             }
             result = result + '</div></a></div><br><br>';
         });
         if(result.trim().length==0){
-            result = result + '<h5><span style="color:#8fa4b8;">No Results found for </span>'+window.location.search.split('=')[1].trim()+'</h5>';
+            result = result + '<h5><span style="color:#8fa4b8;">No Results found for </span>'+window.location.search.split('q=')[1].split('&')[0].split('%')[0]+'</h5>';
         }
         result = result + "<hr>";
         document.getElementById("search_results").innerHTML = result;
