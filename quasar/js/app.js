@@ -14,11 +14,36 @@ appLoading.start();
         document.getElementById("page_no").innerHTML = 0;
     }
 
+    //highlighting the search type
+    if(window.location.href.includes("metadata.Content-Type%3Atext")){
+        //highlight text
+        document.getElementById("text").color="#3b3be8";
+    }
+    else if(window.location.href.includes("metadata.Content-Type%3Aaudio")){
+        //highlight audio
+        document.getElementById("audio").color="#3b3be8";
+    }
+    else if(window.location.href.includes("metadata.Content-Type%3Avideo")){
+        //highlight video
+        document.getElementById("video").color="#3b3be8";
+    }
+    else if(window.location.href.includes("metadata.Content-Type%3Aimage")){
+        //highlight image
+        document.getElementById("image").color="#3b3be8";
+    }
+    else{
+        //highlight all
+        document.getElementById("all").color="#3b3be8";
+    }
+
+
     if(window.location.search.split('?')[1].trim().length!=0){
         document.getElementById("query").value = decodeURI(window.location.href.split("?q=")[1].split("&")[0].split('%20metadata.Content-Type')[0]);
         
         search(window.location.search);
     }
+
+    //event listener for enter key for search
     document.addEventListener('keydown', function(event) {
       if (event.keyCode == 13) {
         if(document.getElementById("query").value.trim().length!=0){
