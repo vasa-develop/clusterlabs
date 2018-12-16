@@ -142,7 +142,7 @@ appLoading.start();
     document.getElementById("bottom_next_page").onclick = ()=>{
         var cur_page = window.location.search.split("page=")[1].split("&")[0];
         if(cur_page){
-            if(parseInt(cur_page)>0){
+            if(parseInt(cur_page)>=0){
                 var page = parseInt(window.location.search.split("page=")[1].split("&")[0])+1;
                 window.location = "search.html?q=something&page="+page.toString();
             }
