@@ -137,7 +137,7 @@ appLoading.start();
 
         //adding safesearch warning
         if(safesearch){
-            document.getElementById("total_results").innerHTML = document.getElementById("total_results").innerHTML + '&nbsp;&nbsp;&nbsp;<font color="green">Safe Search Activated('+block_count+' result(s) blocked)</font>';
+            document.getElementById("total_results").innerHTML = document.getElementById("total_results").innerHTML + '<br><font color="green">Safe Search Activated('+block_count+' result(s) blocked)</font>';
         }
     }
 
