@@ -195,6 +195,7 @@ appLoading.start();
     }
     
     function passes_safesearch(element){
+        
         if(element['description']){
             if(element['description'].toLocaleLowerCase().includes("aMule".toLocaleLowerCase()) || element['description'].toLocaleLowerCase().includes("Firsthair".toLocaleLowerCase()) ||
             element['description'].toLocaleLowerCase().includes("<em>fuck</em> who".toLocaleLowerCase()) || 
@@ -224,6 +225,7 @@ appLoading.start();
                     && !element['description'].toLocaleLowerCase().includes("parent".toLocaleLowerCase())
                     && !element['description'].toLocaleLowerCase().includes("foundation".toLocaleLowerCase())
                     && !element['description'].toLocaleLowerCase().includes("educat".toLocaleLowerCase())
+                    && !element['description'].toLocaleLowerCase().includes("love".toLocaleLowerCase())
                 )
             ) 
             
@@ -256,6 +258,7 @@ appLoading.start();
                 && !element['title'].toLocaleLowerCase().includes("protect".toLocaleLowerCase())
                 && !element['title'].toLocaleLowerCase().includes("parent".toLocaleLowerCase())
                     && !element['title'].toLocaleLowerCase().include("foundation".toLocaleLowerCase())&& !element['title'].toLocaleLowerCase().includes("educat".toLocaleLowerCase())
+                    && !element['title'].toLocaleLowerCase().includes("love".toLocaleLowerCase())
             )
 
         )
