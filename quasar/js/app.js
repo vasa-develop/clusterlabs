@@ -197,71 +197,36 @@ appLoading.start();
     function passes_safesearch(element){
         
         if(element['description']){
-            if(element['description'].toLocaleLowerCase().includes("aMule".toLocaleLowerCase()) || element['description'].toLocaleLowerCase().includes("Firsthair".toLocaleLowerCase()) ||
-            element['description'].toLocaleLowerCase().includes("<em>fuck</em> who".toLocaleLowerCase()) || 
-            (
-                (
-                element['description'].toLocaleLowerCase().includes("teen".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("child".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("young".toLocaleLowerCase())
-                )
-                && 
-                
-                (element['description'].toLocaleLowerCase().includes("fuck".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("pussy".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("slave".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("porn".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("molest".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("abuse".toLocaleLowerCase())||
-                element['description'].toLocaleLowerCase().includes("kill".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("murder".toLocaleLowerCase()) ||
-                element['description'].toLocaleLowerCase().includes("rape".toLocaleLowerCase())
-                )
-                &&(
-                    !element['description'].toLocaleLowerCase().includes("care".toLocaleLowerCase()) && !element['description'].toLocaleLowerCase().includes("law".toLocaleLowerCase())
-                    && !element['description'].toLocaleLowerCase().includes("protect".toLocaleLowerCase())
-                    && !element['description'].toLocaleLowerCase().includes("parent".toLocaleLowerCase())
-                    && !element['description'].toLocaleLowerCase().includes("foundation".toLocaleLowerCase())
-                    && !element['description'].toLocaleLowerCase().includes("educat".toLocaleLowerCase())
-                    && !element['description'].toLocaleLowerCase().includes("love".toLocaleLowerCase())
-                )
-            ) 
-            
+            if(
+            element['description'].toLocaleLowerCase().includes("fuck".toLocaleLowerCase()) || element['description'].toLocaleLowerCase().includes("porn".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("tit".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("boob".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("dick".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("penis".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("cock".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("cunt".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("pussy".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("cunt".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("ass".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("blowjob".toLocaleLowerCase())
             ){
                 return false;
             }
         }
-        if(element['title'].toLocaleLowerCase().includes("aMule".toLocaleLowerCase()) || element['title'].toLocaleLowerCase().includes("Firsthair".toLocaleLowerCase()) || 
-        (
-
-        (
-            element['title'].toLocaleLowerCase().includes("teen".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("child".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("young".toLocaleLowerCase())
-        )
-            && 
-            (element['title'].toLocaleLowerCase().includes("fuck".toLocaleLowerCase()) ||
+        if(
+            element['title'].toLocaleLowerCase().includes("fuck".toLocaleLowerCase()) || element['title'].toLocaleLowerCase().includes("porn".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("tit".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("boob".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("dick".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("penis".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("cock".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("cunt".toLocaleLowerCase()) ||
             element['title'].toLocaleLowerCase().includes("pussy".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("slave".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("porn".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("molest".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("abuse".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("kill".toLocaleLowerCase()) ||
-            element['title'].toLocaleLowerCase().includes("murder".toLocaleLowerCase()) || element['title'].toLocaleLowerCase().includes("rape".toLocaleLowerCase()) 
-            )
-            &&(
-                !element['title'].toLocaleLowerCase().includes("care".toLocaleLowerCase()) && !element['title'].toLocaleLowerCase().includes("law".toLocaleLowerCase())
-                && !element['title'].toLocaleLowerCase().includes("protect".toLocaleLowerCase())
-                && !element['title'].toLocaleLowerCase().includes("parent".toLocaleLowerCase())
-                    && !element['title'].toLocaleLowerCase().include("foundation".toLocaleLowerCase())&& !element['title'].toLocaleLowerCase().includes("educat".toLocaleLowerCase())
-                    && !element['title'].toLocaleLowerCase().includes("love".toLocaleLowerCase())
-            )
-
-        )
+            element['title'].toLocaleLowerCase().includes("cunt".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("ass".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("blowjob".toLocaleLowerCase())
         ){
             return false;
         }
