@@ -64,13 +64,8 @@
       <center style="margin-top:100px;">
         <h1><font color="#3b3be8">Quasar</font></h1>
         <h6><font color="#3b3be8">Search the new Web</font></h6>
-        <!-- <div class="form-group col-md-6"><input id="query" type="text" class="form-control" id="form1-name" placeholder="Search Anything..."></div>
-        <button type="button" class="btn btn-outline-success btn-pill" id="search">Search</button> -->
-        <h6>Sorry, we have taken down the Search Engine for a few hours.<br> Please visit after few hours to check out our awesome Search Engine :)</h6>
-        <h6>If you like to be informed about when we are up, then sign up for the alert list:</h6>
-        <div class="form-group col-md-4"><input type="email" class="form-control" id="form1-email" placeholder="Email"></div>
-        <font id="email_status"></font>
-        <button type="button" class="btn btn-success" onclick="sendEmail()">Add me</button>
+        <div class="form-group col-md-6"><input id="query" type="text" class="form-control" id="form1-name" placeholder="Search Anything..."></div>
+        <button type="button" class="btn btn-outline-success btn-pill" id="search">Search</button>
       </center>
       <footer class="footer py-5">
           <h6 class="text-center" style="margin-bottom:0px;">© Copyright 2018 <a href="https://clusterlabs.io" target="_blank">ClusterLabs</a></h6>
@@ -83,36 +78,13 @@
     <script src="https://ipfscloud.store/app/scripts/shards.min.js"></script>
     <script src="https://ipfscloud.store/app/scripts/app-loading.min.js?v=0.0.5"></script>
     <script>
-    /* document.addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', function(event) {
       if (event.keyCode == 13) {
         window.location = "search.html?q="+document.getElementById("query").value.trim()+"&page=0&_type=file";
       }
     });
     document.getElementById("search").onclick = ()=>{
       window.location = "search.html?q="+document.getElementById("query").value.trim()+"&page=0&_type=file";
-    } */
-    function sendEmail(){
-        var email_body={
-            to: document.getElementById("form1-email").value,
-            subject: "Quasar Update",
-            body: "You have been added to Quasar Update group. You will be notified whenever we are online :)"
-        };
-            $.ajax({
-            url: "https://api.ipfscloud.store/email",
-            type: "POST",
-            data: email_body,
-            contentType: 'application/x-www-form-urlencoded',
-            success: function (data) {
-                console.log(data);
-                document.getElementById("email_status").color = "green";
-                document.getElementById("email_status").innerHTML = '✓ We will update you whenever we are online.';
-            },
-            error: function(xhr, ajaxOptions, thrownError){
-                console.log("email error: "+thrownError);
-                document.getElementById("email_status").color = "red";
-                document.getElementById("email_status").innerHTML = 'Some error occured! Please try Again.';            
-            }
-            });
     }
     </script>
   </body>

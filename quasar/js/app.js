@@ -1,4 +1,5 @@
 appLoading.start();
+
     //aligning search bar according to client device
     if(window.navigator.userAgent.includes("Android") || window.navigator.userAgent.includes("iPhone")){
         document.getElementById("search-bar").style = "padding-left:20px;padding-right:20px;padding-top:20px;";
@@ -102,8 +103,12 @@ appLoading.start();
 
     function display(data){
         var result = "";
-        
+        var safesearch=false;
+        var block_count = 0;
+
         data.hits.forEach(element => {
+
+            if(passes_safesearch(element)){
             result = result + "<div class='card'><a target='_blank' href=\"https://gateway.ipfs.io/ipfs/"+element['hash']+"\"><div class='card-body'><h5 class='card-title'>"+element['title']+"</h5>";
             if(typeof(element['first-seen'])!="undefined"){
                 var d = new Date(element['first-seen']);
@@ -116,12 +121,24 @@ appLoading.start();
                 result = result + "<small style='color:#8fa4b8;'>"+element['mimetype']+"</small>";
             }
             result = result + '</div></a></div><br><br>';
+        }
+        else{
+            block_count = block_count + 1;
+            if(!safesearch){
+                safesearch = true;
+            }
+        }
         });
         if(result.trim().length==0){
             result = result + '<h5><span style="color:#8fa4b8;">No Results found for </span>'+window.location.search.split('q=')[1].split('&')[0].split('%')[0]+'</h5>';
         }
         result = result + "<hr>";
         document.getElementById("search_results").innerHTML = result;
+
+        //adding safesearch warning
+        if(safesearch){
+            document.getElementById("total_results").innerHTML = document.getElementById("total_results").innerHTML + '&nbsp;&nbsp;&nbsp;<font color="green">Safe Search Activated('+block_count+' result(s) blocked)</font>';
+        }
     }
 
     document.getElementById("bottom_previous_page").onclick = ()=>{
@@ -177,3 +194,59 @@ appLoading.start();
             });
     }
     
+    function passes_safesearch(element){
+        if(element['description']){
+            if(element['description'].toLocaleLowerCase().includes("aMule".toLocaleLowerCase()) || element['description'].toLocaleLowerCase().includes("Firsthair".toLocaleLowerCase()) ||
+            element['description'].toLocaleLowerCase().includes("rape".toLocaleLowerCase())
+            || element['description'].toLocaleLowerCase().includes("<em>fuck</em> who".toLocaleLowerCase()) || 
+            (
+                (
+                element['description'].toLocaleLowerCase().includes("teen".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("child".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("young".toLocaleLowerCase())
+                )
+                && 
+                
+                (element['description'].toLocaleLowerCase().includes("fuck".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("pussy".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("slave".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("porn".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("molest".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("abuse".toLocaleLowerCase())||
+                element['description'].toLocaleLowerCase().includes("kill".toLocaleLowerCase()) ||
+                element['description'].toLocaleLowerCase().includes("murder".toLocaleLowerCase())
+                )
+            ) 
+            
+            ){
+                return false;
+            }
+        }
+        if(element['title'].toLocaleLowerCase().includes("aMule".toLocaleLowerCase()) || element['title'].toLocaleLowerCase().includes("Firsthair".toLocaleLowerCase()) || element['title'].toLocaleLowerCase().includes("rape".toLocaleLowerCase()) || 
+        (
+
+        (
+            element['title'].toLocaleLowerCase().includes("teen".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("child".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("young".toLocaleLowerCase())
+        )
+            && 
+            (element['title'].toLocaleLowerCase().includes("fuck".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("pussy".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("slave".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("porn".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("molest".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("sex".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("abuse".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("kill".toLocaleLowerCase()) ||
+            element['title'].toLocaleLowerCase().includes("murder".toLocaleLowerCase())
+            )
+        )
+        ){
+            return false;
+        }
+        return true;
+    }
