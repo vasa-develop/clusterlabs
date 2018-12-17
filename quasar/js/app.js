@@ -130,7 +130,7 @@ appLoading.start();
         }
         });
         if(result.trim().length==0){
-            result = result + '<h5><span style="color:#8fa4b8;">No Results found for </span>'+window.location.search.split('q=')[1].split('&')[0].split('%')[0]+'</h5>';
+            result = result + '<h5><span style="color:#8fa4b8;">No Results found for </span>'+decodeURI(window.location.search.split('q=')[1].split('&')[0].split('%20metadata.Content-Type')[0])+'</h5>';
         }
         result = result + "<hr>";
         document.getElementById("search_results").innerHTML = result;
