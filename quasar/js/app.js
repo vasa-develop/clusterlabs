@@ -151,3 +151,29 @@ appLoading.start();
             }
         }
     };
+
+    //email sender
+    function sendEmail(){
+        var email_body={
+            to: document.getElementById("email").value,
+            subject: "Quasar Update",
+            body: "You have been added to Quasar group. You will be notified whenever we are online :)"
+        };
+            $.ajax({
+            url: "https://api.ipfscloud.store/email",
+            type: "POST",
+            data: email_body,
+            contentType: 'application/x-www-form-urlencoded',
+            success: function (data) {
+                console.log(data);
+                document.getElementById("email_status").color = "green";
+                document.getElementById("email_status").innerHTML = '<font>✓ You will now recieve updates from '+project+'</font>';
+            },
+            error: function(xhr, ajaxOptions, thrownError){
+                console.log("email error: "+thrownError);
+                document.getElementById("email_status").color = "red";
+                document.getElementById("email_status").innerHTML = '<font>Some error occured! Please try Again.</font>';            
+            }
+            });
+    }
+    
