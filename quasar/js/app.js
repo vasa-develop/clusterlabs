@@ -195,7 +195,7 @@ appLoading.start();
     }
     
     function passes_safesearch(element){
-        return true;
+        
         if(element['description']){
             if(element['description'].toLocaleLowerCase().includes("aMule".toLocaleLowerCase()) || element['description'].toLocaleLowerCase().includes("Firsthair".toLocaleLowerCase()) ||
             element['description'].toLocaleLowerCase().includes("rape".toLocaleLowerCase())
